@@ -50,6 +50,13 @@ const narrativeManager = class {
     report: function(){io.appendIntoElement("Lots of people heard about you and your dragons, now there would be challenger comeing the challenge you ", "reports");}
  
   },
+  {
+    triggered: false,
+    test: function(data){return data.Food<0}, 
+    unlock:function(){io.showElement("Restart")},  
+    report: function(){io.appendIntoElement("Your dragon die in cost of hunger, clikck restar igf you want to start again ", "reports");}
+ 
+  },
   ]
   }
   
@@ -60,6 +67,7 @@ const narrativeManager = class {
     io.hideElement("showPanel2")
     io.hideElement("showPanel3")
     io.hideElement("showPanel4")
+    io.hideElement("Restart")
   }
 
 

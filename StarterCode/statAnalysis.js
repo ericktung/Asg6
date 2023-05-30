@@ -1,6 +1,6 @@
 // list which resources you want to track
 
-trackedValues = ["resource1", "resource2","resource3","resource4","resource5"]
+trackedValues = ["Food", "workers","Dragon","power","speed","health","fight","Challenger","Experience","Pup","Sup","Hup"]
 
 
 record = []

@@ -70,7 +70,7 @@ const GameInstance = class {
   // this function takes in a panel 
   Fight(){this.Experience+=5;this.fight+=1;this.updateDisplay();
     io.appendIntoElement("You been threw "+this.fight+" Fight with wild dragon and gain total "+this.fight*5+" experience from it", "reports");}
-  gch(){if (this.dragon>=this.Challenger){this.Challenger+=1;this.foodcost+=5;this.updateDisplay();}
+  gch(){if (this.Dragon!=0&&this.Dragon>this.Challenger){this.Challenger+=1;this.foodcost+=5;this.updateDisplay();}
   else io.appendIntoElement("Challenger number can not be more than dragons number ", "reports");}
   Exboost(){this.Experience+=this.Challenger*2;}
   BP(){if(this.Experience>=100){this.Pup+=1;this.Maxp+=5;this.foodcost+=5;this.Experience-=this.expcost;this.updateDisplay();
@@ -79,6 +79,25 @@ const GameInstance = class {
   else io.appendIntoElement("You Need more experience to limit break speed ", "reports");}
   BH(){if(this.Experience>=100){this.Hup+=1;this.Maxh+=5;this.foodcost+=5;this.Experience-=this.expcost;this.updateDisplay();}
   else io.appendIntoElement("You Need more experience to limit break health ", "reports");}
+  re(){
+    this.Maxp =10;
+    this.Maxs =10;
+    this.Maxh =10;
+    this.Food = 0;
+    this.foodcost=0;
+    this.expcost=100;
+    this.workers = 0;
+    this.Dragon = 0;
+    this.power = 0;
+    this.speed = 0;
+    this.health = 0;
+    this.fight=0;
+    this.Challenger = 0;
+    this.Experience = 0;
+    this.Pup = 0;
+    this.Sup = 0;
+    this.Hup = 0;
+  }
   swichPanels(panel) {
     //console.log(panel)
     
